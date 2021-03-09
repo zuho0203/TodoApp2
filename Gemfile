@@ -29,6 +29,7 @@ gem 'devise'
 gem 'better_errors'
 gem 'aws-sdk-s3', require: false
 gem 'hamlit'
+gem 'binding_of_caller'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
