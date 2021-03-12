@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :set_action, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
  def index
     @boards = Board.all
  end
@@ -18,15 +21,12 @@ class ArticlesController < ApplicationController
  end
 
  def show
-    @board = Board.find(params[:id])
  end
 
  def edit
-    @board = current_user.boards.find(params[:id])
  end
 
  def update
-    @board = Board.find(params[:id])
     if @board.update(board_params)
         redirect_to article_path(@board), notice: '更新出来ました'
     else
@@ -44,6 +44,10 @@ class ArticlesController < ApplicationController
  private
  def board_params
     params.require(:board).permit(:name, :description)
+ end
+
+ def set_action
+    @board = Board.find(params[:id])
  end
 
 end
