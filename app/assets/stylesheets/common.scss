@@ -1,14 +1,56 @@
 @import './variables';
+// プロフィールアイコンのdropdown
 
-.dropbtn {
+  .dropdown_icon {
+    position: relative;
+    left: 800px;
+    bottom: 55px;
+    display: inline-block;
+  }
+
+  .dropdown-content_icon {
+    font-weight: normal;
+    display: none;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    &.mini {
+        min-width: 100px;
+    }
+  }
+  
+  .dropdown-content_icon a {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    color: $text-base-color;
+  }
+  
+  .dropdown-content_icon a:hover {
+    background-color: white;
+  }
+  
+  .dropdown_icon:hover .dropdown-content_icon {
+    display: block;
+  }
+
+  // edit,deleteのアイコン
+
+  .dropbtn {
     border: none;
   }
   
   .dropdown {
     position: relative;
+    left: 750px;
+    bottom: 50px;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     font-weight: normal;
     display: none;
@@ -38,4 +80,3 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
-  
