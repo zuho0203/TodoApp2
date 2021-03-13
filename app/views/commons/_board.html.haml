@@ -1,7 +1,9 @@
-= link_to article_path(board) do
-  .card
-    .card_content
-      .card_title
-        = board.name
+.container
+  = link_to article_path(board) do
+    .card
       .card_content
-        = board.description
+        .card_title
+          = board.name
+        .card_content
+          = board.description
+      = image_tag board.user.avatar_image, class: 'header_avatar dropbtn'
