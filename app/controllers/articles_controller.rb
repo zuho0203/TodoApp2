@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
  def index
     @boards = Board.all
+    @task = User.all
  end
  
  def new
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
  def create
     @board = current_user.boards.build(board_params)
     if @board.save
-        redirect_to new_article_path(@board), notice: '保存出来ました'
+        redirect_to root_path, notice: '保存出来ました'
     else
         flash.now[:error] = '保存出来ませんでした'
         render :new

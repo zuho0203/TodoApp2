@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'articles#index'
 
   resources :articles
-
   resource :profile, only: [:show, :edit, :update]
+  resource :task, only: [:new, :create, :show, :edit, :update, :delete]
 end
