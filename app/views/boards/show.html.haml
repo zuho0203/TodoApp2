@@ -1,0 +1,15 @@
+.container
+  .article
+    %h1= @board.name
+    %p= @board.description
+    .dropdown
+      = image_tag 'actions.svg', class: 'dropbtn'
+      .dropdown-content.mini
+        = link_to 'Edit' , edit_board_path(@board)
+        = link_to 'Delete' , board_path(@board), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？' }
+    .card_detail
+      = image_tag @board.user.avatar_image
+  = link_to new_board_task_path(@board) do
+    .article_new
+      .article_new_content + Add new task
+
