@@ -1,4 +1,4 @@
-class ArticlesController < ApplicationController
+class BoardsController < ApplicationController
   before_action :set_action, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
