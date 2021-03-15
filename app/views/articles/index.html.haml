@@ -1,7 +1,3 @@
 .container
   - @boards.each do |board|
     = render 'commons/board', board: board
-
-  = link_to new_article_path do
-    .article_new
-      .article_new_content + Add new board
