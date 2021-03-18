@@ -1,14 +1,1 @@
-.container
-  .article
-    %h1= @board.name
-    %p= @board.description
-    .dropdown
-      = image_tag 'actions.svg', class: 'dropbtn'
-      .dropdown-content.mini
-        = link_to 'Edit' , edit_article_path(@board)
-        = link_to 'Delete' , article_path(@board), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？' }
-    .card_detail
-      = image_tag @board.user.avatar_image
-  = link_to new_task_path do
-    .article_new
-      .article_new_content + Add new comment
+taskのshow→boardのshow同様に編集削除機能追加

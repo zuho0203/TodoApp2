@@ -13,7 +13,13 @@ class TasksController < ApplicationController
         flash.now[:error] = '更新出来ませんでした'
         render :new
     end
-end
+  end
+
+  def show
+   
+  end
+
+
 
   private
   def task_params
