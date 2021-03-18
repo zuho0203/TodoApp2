@@ -4,7 +4,6 @@ class BoardsController < ApplicationController
 
  def index
     @boards = Board.all
-    @task = User.all
  end
  
  def new
@@ -22,6 +21,8 @@ class BoardsController < ApplicationController
  end
 
  def show
+   @tasks = @board.tasks
+ 
  end
 
  def edit
