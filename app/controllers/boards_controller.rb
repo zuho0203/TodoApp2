@@ -22,7 +22,6 @@ class BoardsController < ApplicationController
 
  def show
    @tasks = @board.tasks
- 
  end
 
  def edit
