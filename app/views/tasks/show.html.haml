@@ -1,1 +1,9 @@
-taskのshow→boardのshow同様に編集削除機能追加
+.container
+  .article
+    %h1= @task.title
+    %p= @task.description
+    .dropdown
+      = image_tag 'actions.svg', class: 'dropbtn'
+      .dropdown-content.mini
+        = link_to 'Edit' , edit_board_task_path(@board.id, @task.id)
+        = link_to 'Delete' , board_path(@task), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？' }

@@ -1,0 +1,14 @@
+.container
+  %ul
+    - @task.errors.full_messages.each do |message|
+      %li= message
+  = form_with(model: @task, url: board_task_path(@board, @task), method: 'put', local: true) do |f|
+    %div
+      = f.label :title, 'Title'
+    %div
+      = f.text_field :name, class: 'text'
+    %div
+      = f.label :description, 'Description'
+    %div
+      = f.text_area :description, class: 'text'
+    = f.submit 'Submit', class: 'btn-primary'

@@ -16,7 +16,24 @@ class TasksController < ApplicationController
   end
 
   def show
-   
+    @task = Task.find(params[:id])
+    @board = @task.board
+  end
+
+  def edit
+    @task = Task.find(params[:id])
+    @board = @task.board
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    @board = @task.board
+    if @task.update(task_params)
+      redirect_to board_path(@board.id), notice: '更新出来ました'
+  else
+      flash.now[:error] = '更新出来ませんでした'
+      render :edit
+    end
   end
 
 
