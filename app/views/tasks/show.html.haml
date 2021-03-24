@@ -1,5 +1,6 @@
 .container
   .article
+    %p= @task.deadline
     %h1= @task.title
     %p= @task.description
     .dropdown
@@ -7,13 +8,13 @@
       .dropdown-content.mini
         = link_to 'Edit' , edit_board_task_path(@board, @task)
         = link_to 'Delete' , board_task_path(@board, @task), data: { method: 'delete' , confirm: '本当に削除してもよろしいですか？' }
-.article
-  %h2 コメント一覧
-  - @comments.each do |comment|
-    .article_comment
-      %p= comment.content
-      = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
+  .article
+    %h2 コメント一覧
+    - @comments.each do |comment|
+      .article_comment
+        %p= comment.content
+        = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
 
-= link_to new_board_task_comment_path(@board, @task) do
-  .article_new
-    .article_new_content + Add new comment
+  = link_to new_board_task_comment_path(@board, @task) do
+    .article_new
+      .article_new_content + Add new comment
