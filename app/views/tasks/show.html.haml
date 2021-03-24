@@ -1,6 +1,9 @@
 .container
   .article
     %p= @task.deadline
+    - if @task.eyecatch.attached?
+      .article_image
+        = image_tag @task.eyecatch
     %h1= @task.title
     %p= @task.description
     .dropdown
