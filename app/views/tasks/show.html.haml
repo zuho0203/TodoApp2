@@ -12,6 +12,7 @@
   - @comments.each do |comment|
     .article_comment
       %p= comment.content
+      = image_tag comment.user.avatar_image, class: 'header_avatar dropbtn'
 
 = link_to new_board_task_comment_path(@board, @task) do
   .article_new
