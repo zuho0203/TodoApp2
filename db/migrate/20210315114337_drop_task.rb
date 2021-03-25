@@ -1,5 +1,5 @@
 class DropTask < ActiveRecord::Migration[6.0]
-  def change
-    drop_table :tasks
+  def up
+    connection.execute 'drop table if exists task'
   end
 end
